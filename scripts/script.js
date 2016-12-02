@@ -1,6 +1,6 @@
 var playerMoney = 100;
 var playerInv = [{fruit:'apple', amount:0} , {fruit:'orange', amount:0} , {fruit:'banana' , amount:0}, {fruit:'grape', amount:0}];
-var quantity = 1
+var quantity = 1;
 console.log(playerInv[0].fruit);
 $(document).ready(function(){
   $('#pMoni').html(playerMoney);
