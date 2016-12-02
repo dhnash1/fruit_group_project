@@ -28,8 +28,10 @@ button{
   border-radius: 25px;
 
 }
-#timer{
-  
+#timeLeft{
+  font-weight: bold;
+  font-size:  40px;
+
 
 }
 #cash{
