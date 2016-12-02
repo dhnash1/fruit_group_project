@@ -2,6 +2,8 @@ var playerMoney = 100;
 var playerInv = [{fruit:'apple', amount:0} , {fruit:'orange', amount:0} , {fruit:'banana' , amount:0}, {fruit:'grape', amount:0}];
 console.log(playerInv[0].fruit);
 $(document).ready(function(){
+  $('#pMoni').html(playerMoney);
+  if(st === true){
   $("#buyApple").on("click", function(apple){
     console.log("The buy apple button was clicked.");
   var quantity = $("#quantityApple").val();
@@ -11,6 +13,8 @@ $(document).ready(function(){
   var calcPrice = quantity * price;
   console.log("Total Price: ", calcPrice);
   $("#totalPriceApple").text(calcPrice); //[Displays only the price of what apples we buy when we click button, do we want a running total?]
+  playerMoney = playerMoney - calcPrice;
+  $('#pMoni').html(playerMoney);
   playerInv[0].amount = playerInv[0].amount + 1 * quantity; //the lazy mans parseint()
   console.log(playerInv[0].amount);
 });//end apple click
@@ -23,6 +27,8 @@ console.log("This is the Orange Price:", price);
 var calcPrice = quantity * price;
 console.log("Total Price: ", calcPrice);
 $("#totalPriceOrange").text(calcPrice);
+playerMoney = playerMoney - calcPrice;
+$('#pMoni').html(playerMoney);
 playerInv[1].amount = playerInv[1].amount + 1 * quantity;
 console.log(playerInv[1].amount);
 });//end orange click
@@ -35,6 +41,8 @@ console.log("This is the Banana Price:", price);
 var calcPrice = quantity * price;
 console.log("Total Price: ", calcPrice);
 $("#totalPriceBanana").text(calcPrice);
+playerMoney = playerMoney - calcPrice;
+$('#pMoni').html(playerMoney);
 playerInv[2].amount = playerInv[2].amount + 1 * quantity;
 console.log(playerInv[2].amount);
 });//end Banana click
@@ -47,6 +55,8 @@ console.log("This is the Grape Price:", price);
 var calcPrice = quantity * price;
 console.log("Total Price: ", calcPrice);
 $("#totalPriceGrape").text(calcPrice);
+playerMoney = playerMoney - calcPrice;
+$('#pMoni').html(playerMoney);
 playerInv[3].amount = playerInv[3].amount + 1 * quantity;
 console.log(playerInv[3].amount);
 });//end Grape click
@@ -108,37 +118,47 @@ $('.fruitButton').on('click', function(){
   $('#bInv').html("<p>Bananas: " + playerInv[2].amount + "</p>");
   $('#gInv').html("<p>Grapes: " + playerInv[3].amount + "</p>");
 });//end inventory
+}//ens if st
 }); // a loop would probably really help here. also end ready.
 //start joeys randomization
-setInterval(function() {
-  var number = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#applePrice').html(number.toFixed(2) );
-},
-15000);
-setInterval(function() {
-  var number = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#orangePrice').html(number.toFixed(2) );
-},
-15000);
-setInterval(function() {
-  var number = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#bananaPrice').html(number.toFixed(2) );
-},
-15000);
-setInterval(function() {
-  var number = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#grapePrice').html(number.toFixed(2) );
-},
-15000);
+var st = false;
+function start(){
+  var st = true;
+  var number1 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#applePrice').html(number1.toFixed(2) );
+  var number2 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#orangePrice').html(number2.toFixed(2) );
+  var number3 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#bananaPrice').html(number3.toFixed(2) );
+  var number4 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#grapePrice').html(number4.toFixed(2) );
 var timer = 15;
-setInterval(function(){
+$('#timeLeft').html(timer);
+setInterval(function() {
   if (timer !== 0) {
     timer=timer - 1;
-    console.log(timer);
-  }else{
-    timer = 15;
+    $('#timeLeft').html(timer);
   }
+  else if (timer === 0) {
 
-}, 1000);
+   number1 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#applePrice').html(number1.toFixed(2) );
+
+   number2 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#orangePrice').html(number2.toFixed(2) );
+
+   number3 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#bananaPrice').html(number3.toFixed(2) );
+
+   number4 = 0.50 + Math.floor(Math.random() * 9.99);
+  $('#grapePrice').html(number4.toFixed(2) );
+
+  timer = 15;
+  $('#timeLeft').html(timer);
+  }
+},
+1000);
+
 setInterval(0);
-//end joeys randomization | [ BUG ]: Numbers dont appear untill first randomization.
+//end joeys randomization | [ BUG ]: Numbers dont appear untill first randomization.[FIXED]
+}
