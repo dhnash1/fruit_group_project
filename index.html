@@ -15,8 +15,14 @@
   </head>
   <body>
     <h1>THE FRUITSHACK</h1>
-    <p class="col-md-2 col-md-offset-10"> User cash:</p>
-
+    <div id="cash" class="col-sm-1 col-md-offset-10">
+      <p> User cash:</p>
+      <p>$100</p>
+    </div>
+    <div id="timer" class="col-md-4 col-md-offset-4">
+    <p class="col-md-2"> Time till randomization: </p>
+    <p>5:00</p>
+  </div>
     <table class="table table-bordered table-striped table-responsive">
     	<thead>
     		<tr>
@@ -63,7 +69,7 @@
     				<div id="orangePrice" class="price">$1.00</div>
     			</td>
     			<td>
-    				<input type="number" name="" value="">
+    				<input type="number" class="quantityOrange" name="" value="">
     			</td>
     			<td class="col-sm-1">
     				<button type="button" id="buyOrange" name="button">Buy!</button>

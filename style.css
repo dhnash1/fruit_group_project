@@ -1,6 +1,6 @@
 body{
-  /*background-image: url("https://inktart.files.wordpress.com/2012/10/40-dirty-paper-background-lrg.jpg");*/
-  /*background-size: cover;*/
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/04/natural-paper-background-texture-hd-5a0b.jpg");
+  background-size: cover;
 }
 
 .title{
@@ -10,9 +10,30 @@ body{
 #inv{
   text-align: center;
   border: solid black 5px;
+  background-color: white;
+  border-radius: 25px;
 }
 button{
   display:block;
   width: auto;
   margin: 0px auto;
+}
+.table{
+  background-color: white;
+}
+#timer, #cash{
+  display: inline-flex;
+  border: solid black 3px;
+  background-color: white;
+  border-radius: 25px;
+
+}
+#timer{
+  
+
+}
+#cash{
+
+  text-align: center;
+
 }
