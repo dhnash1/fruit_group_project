@@ -2,10 +2,6 @@ var playerMoney = 100;
 var playerInv = [{fruit:'apple', amount:0} , {fruit:'orange', amount:0} , {fruit:'banana' , amount:0}, {fruit:'grape', amount:0}];
 console.log(playerInv[0].fruit);
 $(document).ready(function(){
-
-
-
-
   $("#buyApple").on("click", function(apple){
     console.log("The buy apple button was clicked.");
   var quantity = $("#quantityApple").val();
@@ -134,5 +130,15 @@ setInterval(function() {
   $('#grapePrice').html(number.toFixed(2) );
 },
 15000);
+var timer = 15;
+setInterval(function(){
+  if (timer !== 0) {
+    timer=timer - 1;
+    console.log(timer);
+  }else{
+    timer = 15;
+  }
+
+}, 1000);
 setInterval(0);
 //end joeys randomization | [ BUG ]: Numbers dont appear untill first randomization.
