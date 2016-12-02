@@ -1,14 +1,13 @@
 var playerMoney = 100;
 var playerInv = [{fruit:'apple', amount:0} , {fruit:'orange', amount:0} , {fruit:'banana' , amount:0}, {fruit:'grape', amount:0}];
+var quantity = 1
 console.log(playerInv[0].fruit);
 $(document).ready(function(){
   $('#pMoni').html(playerMoney);
 //  if(st === true){
   $("#buyApple").on("click", function(apple){
     console.log("The buy apple button was clicked.");
-  var quantity = $("#quantityApple").val();
-  console.log("This is quantity:", quantity);
-  var price = $("#applePrice").html();
+    var price = $("#applePrice").html();
   console.log("This is the Apple Price:", price);
   var calcPrice = quantity * price;
   console.log("Total Price: ", calcPrice);
@@ -20,8 +19,6 @@ $(document).ready(function(){
 });//end apple click
 $("#buyOrange").on("click", function(orange){
   console.log("The buy orange button was clicked.");
-var quantity = $("#quantityOrange").val();
-console.log("This is quantity:", quantity);
 var price = $("#orangePrice").html();
 console.log("This is the Orange Price:", price);
 var calcPrice = quantity * price;
@@ -34,8 +31,6 @@ console.log(playerInv[1].amount);
 });//end orange click
 $("#buyBanana").on("click", function(apple){
   console.log("The buy banana button was clicked.");
-var quantity = $("#quantityBanana").val();
-console.log("This is quantity:", quantity);
 var price = $("#bananaPrice").html();
 console.log("This is the Banana Price:", price);
 var calcPrice = quantity * price;
@@ -48,8 +43,6 @@ console.log(playerInv[2].amount);
 });//end Banana click
 $("#buyGrape").on("click", function(apple){
   console.log("The buy grape button was clicked.");
-var quantity = $("#quantityGrape").val();
-console.log("This is quantity:", quantity);
 var price = $("#grapePrice").html();
 console.log("This is the Grape Price:", price);
 var calcPrice = quantity * price;
@@ -61,56 +54,56 @@ playerInv[3].amount = playerInv[3].amount + 1 * quantity;
 console.log(playerInv[3].amount);
 });//end Grape click
 //start elliot sanit BUG: Alert is displayed, but it doesnt stop anything
-$("#buyApple").on("click", function (){
-  console.log("in buy apple function");
-  var qApple = $("#quantityApple").val();
-  if(qApple.length === 0){
-      alert("Please input a number!");
-    } else if (qApple < 0) {
-      alert("Please input a postive number!");
-    } else {
-      return qApple;
-    }//end if condition
-});//end buyApple test function
-
-//begin buy apple on click
-$("#buyOrange").on("click", function (){
-  console.log("in buy orange function");
-  var qOrange = $("#quantityOrange").val();
-  if(qOrange.length === 0){
-      alert("Please input a number!");
-    } else if (qOrange < 0) {
-      alert("Please input a postive number!");
-    } else {
-      return qOrange;
-    }//end if condition
-});//end buyApple test function
-//begin buy banana on click
-$("#buyBanana").on("click", function (){
-  console.log("in buy grape function");
-  var qBanana = $("#quantityBanana").val();
-  if(qBanana.length === 0){
-      alert("Please input a number!");
-    } else if (qBanana < 0) {
-      alert("Please input a postive number!");
-    } else {
-      return qBanana;
-    }//end if condition
-});//end buyBanana test function
-
-//begin buy grape on click
-$("#buyGrape").on("click", function (){
-  console.log("in buy grape function");
-  var qGrape = $("#quantityGrape").val();
-  if(qGrape.length === 0){
-      alert("Please input a number!");
-    } else if (qGrape < 0) {
-      alert("Please input a postive number!");
-    } else {
-      return qGrape;
-    }//end if condition
-});//end buy grape test function
-//end elliot sanit
+// $("#buyApple").on("click", function (){
+//   console.log("in buy apple function");
+//   var qApple = $("#quantityApple").val();
+//   if(qApple.length === 0){
+//       alert("Please input a number!");
+//     } else if (qApple < 0) {
+//       alert("Please input a postive number!");
+//     } else {
+//       return qApple;
+//     }//end if condition
+// });//end buyApple test function
+//
+// //begin buy apple on click
+// $("#buyOrange").on("click", function (){
+//   console.log("in buy orange function");
+//   var qOrange = $("#quantityOrange").val();
+//   if(qOrange.length === 0){
+//       alert("Please input a number!");
+//     } else if (qOrange < 0) {
+//       alert("Please input a postive number!");
+//     } else {
+//       return qOrange;
+//     }//end if condition
+// });//end buyApple test function
+// //begin buy banana on click
+// $("#buyBanana").on("click", function (){
+//   console.log("in buy grape function");
+//   var qBanana = $("#quantityBanana").val();
+//   if(qBanana.length === 0){
+//       alert("Please input a number!");
+//     } else if (qBanana < 0) {
+//       alert("Please input a postive number!");
+//     } else {
+//       return qBanana;
+//     }//end if condition
+// });//end buyBanana test function
+//
+// //begin buy grape on click
+// $("#buyGrape").on("click", function (){
+//   console.log("in buy grape function");
+//   var qGrape = $("#quantityGrape").val();
+//   if(qGrape.length === 0){
+//       alert("Please input a number!");
+//     } else if (qGrape < 0) {
+//       alert("Please input a postive number!");
+//     } else {
+//       return qGrape;
+//     }//end if condition
+// });//end buy grape test function
+// //end elliot sanit
 //player Inventory
 $('.fruitButton').on('click', function(){
   $('#aInv').html("<p>Apples: " + playerInv[0].amount + "</p>");
