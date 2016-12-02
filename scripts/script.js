@@ -151,34 +151,34 @@ setInterval(function() {
   }
   else if (timer === 0) {
 
-    var randomo = function(){
-      var rando = (Math.random() * (1 - 3) + 3).toFixed(0);
-      console.log(rando);
-    };
-    var x = randomo();
-    var y = randomo();
-    var z = randomo();
-    var w = randomo();
-    console.log(w, x, y, z);
-    x();
-    if (x==1) {
-      number1 = number1 - 0.50;
-      $('#applePrice').html(number1);
-    }else if( x==2 ){
-      $('#applePrice').html(number1);
-    }else if (x==3){
-      number1 = number1 + 0.50;
-      $('#applePrice').html(number1);
-    }
-  //  number1 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
-  // $('#applePrice').html(number1);
-  //  number2 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
-  // $('#orangePrice').html(number2 );
-  //  number3 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
-  // $('#bananaPrice').html(number3);
-  //  number4 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
-  // $('#grapePrice').html(number4 );
-  // timer = 15;
+    // var randomo = function(){
+    //   var rando = (Math.random() * (1 - 3) + 3).toFixed(0);
+    //   console.log(rando);
+    // };
+    // var x = randomo();
+    // var y = randomo();
+    // var z = randomo();
+    // var w = randomo();
+    // console.log(w, x, y, z);
+    // x();
+    // if (x==1) {
+    //   number1 = number1 - 0.50;
+    //   $('#applePrice').html(number1);
+    // }else if( x==2 ){
+    //   $('#applePrice').html(number1);
+    // }else if (x==3){
+    //   number1 = number1 + 0.50;
+    //   $('#applePrice').html(number1);
+    // }
+   number1 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#applePrice').html(number1);
+   number2 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#orangePrice').html(number2 );
+   number3 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#bananaPrice').html(number3);
+   number4 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#grapePrice').html(number4 );
+  timer = 15;
   $('#timeLeft').html(timer);
   }
 },
