@@ -1,6 +1,7 @@
 var playerMoney = 100;
 var playerInv = [{fruit:'apple', amount:0} , {fruit:'orange', amount:0} , {fruit:'banana' , amount:0}, {fruit:'grape', amount:0}];
 var quantity = 1;
+var run = true;
 console.log(playerInv[0].fruit);
 $(document).ready(function(){
   function theWholeGame(){
@@ -14,7 +15,7 @@ $(document).ready(function(){
   console.log("Total Price: ", calcPrice);
   $("#totalPriceApple").text(calcPrice); //[Displays only the price of what apples we buy when we click button, do we want a running total?]
   playerMoney = playerMoney - calcPrice;
-  $('#pMoni').html(playerMoney);
+  $('#pMoni').html(playerMoney.toFixed(2));
   playerInv[0].amount = playerInv[0].amount + 1 * quantity; //the lazy mans parseint()
   console.log(playerInv[0].amount);
 });//end apple click
@@ -26,7 +27,7 @@ var calcPrice = quantity * price;
 console.log("Total Price: ", calcPrice);
 $("#totalPriceOrange").text(calcPrice);
 playerMoney = playerMoney - calcPrice;
-$('#pMoni').html(playerMoney);
+$('#pMoni').html(playerMoney.toFixed(2));
 playerInv[1].amount = playerInv[1].amount + 1 * quantity;
 console.log(playerInv[1].amount);
 });//end orange click
@@ -38,7 +39,7 @@ var calcPrice = quantity * price;
 console.log("Total Price: ", calcPrice);
 $("#totalPriceBanana").text(calcPrice);
 playerMoney = playerMoney - calcPrice;
-$('#pMoni').html(playerMoney);
+$('#pMoni').html(playerMoney.toFixed(2));
 playerInv[2].amount = playerInv[2].amount + 1 * quantity;
 console.log(playerInv[2].amount);
 });//end Banana click
@@ -50,7 +51,7 @@ var calcPrice = quantity * price;
 console.log("Total Price: ", calcPrice);
 $("#totalPriceGrape").text(calcPrice);
 playerMoney = playerMoney - calcPrice;
-$('#pMoni').html(playerMoney);
+$('#pMoni').html(playerMoney.toFixed(2));
 playerInv[3].amount = playerInv[3].amount + 1 * quantity;
 console.log(playerInv[3].amount);
 });//end Grape click
@@ -111,23 +112,36 @@ $('.fruitButton').on('click', function(){
   $('#oInv').html("<p>Oranges: " + playerInv[1].amount + "</p>");
   $('#bInv').html("<p>Bananas: " + playerInv[2].amount + "</p>");
   $('#gInv').html("<p>Grapes: " + playerInv[3].amount + "</p>");
+  if(playerMoney <= 0){
+    $('#shack').remove();
+    $('.fruitButton').remove();
+    $('#timeLeft').remove();
+    $('.price').remove();
+    alert("Game over!");
+    $('#pMoni').html = 0;
+
+  }
 });//end inventory
 //}//ens if
 }
+
 theWholeGame();
 }); // a loop would probably really help here. also end ready.
 //start joeys randomization
 var st = false;
 function start(){
    st = true;
-  var number1 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#applePrice').html(number1.toFixed(2) );
-  var number2 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#orangePrice').html(number2.toFixed(2) );
-  var number3 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#bananaPrice').html(number3.toFixed(2) );
-  var number4 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#grapePrice').html(number4.toFixed(2) );
+   number1 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#applePrice').html(number1);
+
+   number2 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#orangePrice').html(number2 );
+
+   number3 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#bananaPrice').html(number3);
+
+   number4 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#grapePrice').html(number4 );
 var timer = 15;
 $('#timeLeft').html(timer);
 setInterval(function() {
@@ -136,19 +150,14 @@ setInterval(function() {
     $('#timeLeft').html(timer);
   }
   else if (timer === 0) {
-
-   number1 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#applePrice').html(number1.toFixed(2) );
-
-   number2 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#orangePrice').html(number2.toFixed(2) );
-
-   number3 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#bananaPrice').html(number3.toFixed(2) );
-
-   number4 = 0.50 + Math.floor(Math.random() * 9.99);
-  $('#grapePrice').html(number4.toFixed(2) );
-
+   number1 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#applePrice').html(number1);
+   number2 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#orangePrice').html(number2 );
+   number3 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#bananaPrice').html(number3);
+   number4 = (Math.random() * (0.5 - 9.99) + 9.99).toFixed(2);
+  $('#grapePrice').html(number4 );
   timer = 15;
   $('#timeLeft').html(timer);
   }
