@@ -3,7 +3,7 @@ var playerInv = [{fruit:'apple', amount:0} , {fruit:'orange', amount:0} , {fruit
 console.log(playerInv[0].fruit);
 $(document).ready(function(){
   $('#pMoni').html(playerMoney);
-  if(st === true){
+//  if(st === true){
   $("#buyApple").on("click", function(apple){
     console.log("The buy apple button was clicked.");
   var quantity = $("#quantityApple").val();
@@ -118,12 +118,12 @@ $('.fruitButton').on('click', function(){
   $('#bInv').html("<p>Bananas: " + playerInv[2].amount + "</p>");
   $('#gInv').html("<p>Grapes: " + playerInv[3].amount + "</p>");
 });//end inventory
-}//ens if st
+//}//ens if st
 }); // a loop would probably really help here. also end ready.
 //start joeys randomization
 var st = false;
 function start(){
-  var st = true;
+   st = true;
   var number1 = 0.50 + Math.floor(Math.random() * 9.99);
   $('#applePrice').html(number1.toFixed(2) );
   var number2 = 0.50 + Math.floor(Math.random() * 9.99);
