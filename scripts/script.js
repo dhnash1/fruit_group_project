@@ -111,8 +111,8 @@ $('.fruitButton').on('click', function(){
   var audio = $("#mysoundclip")[0];
   audio.play();
   $('#aInv').html("<p>Apples: " + playerInv[0].amount + "</p>");
-  $('#oInv').html("<p>Oranges: " + playerInv[1].amount + "</p>");
-  $('#bInv').html("<p>Bananas: " + playerInv[2].amount + "</p>");
+  $('#oInv').html("<p>Mangoes: " + playerInv[1].amount + "</p>");
+  $('#bInv').html("<p>Kiwis: " + playerInv[2].amount + "</p>");
   $('#gInv').html("<p>Grapes: " + playerInv[3].amount + "</p>");
   if(playerMoney <= 0){
     $('#shack').remove();
@@ -121,7 +121,11 @@ $('.fruitButton').on('click', function(){
     $('.price').remove();
     alert("Game over!");
     $('#pMoni').html = 0;
-
+    var donk = playerInv[0].amount * 1 + playerInv[1].amount * 1 + playerInv[2].amount * 1 + playerInv[3].amount * 1;
+    $('#final').html("Final Amount of Fruit: " + donk );
+    console.log(donk);
+//b out k in
+//or out m
   }
 });//end inventory
 //}//ens if
