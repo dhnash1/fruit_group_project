@@ -108,6 +108,8 @@ console.log(playerInv[3].amount);
 // //end elliot sanit
 //player Inventory
 $('.fruitButton').on('click', function(){
+  var audio = $("#mysoundclip")[0];
+  audio.play();
   $('#aInv').html("<p>Apples: " + playerInv[0].amount + "</p>");
   $('#oInv').html("<p>Oranges: " + playerInv[1].amount + "</p>");
   $('#bInv').html("<p>Bananas: " + playerInv[2].amount + "</p>");

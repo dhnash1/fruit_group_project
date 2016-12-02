@@ -12,6 +12,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Fruits Basket</title>
+    <audio id="mysoundclip" preload="auto">
+     <source src="coin01.wav">
+   </audio>
   </head>
   <body>
     <h1>THE FRUITSHACK</h1>
@@ -27,9 +30,7 @@
     <table class="table table-bordered table-striped table-responsive">
     	<thead>
     		<tr>
-    			<th>
-    				Fruit(s)
-    			</th>
+
     			<th>
     				Prices
     			</th>
@@ -44,13 +45,10 @@
     	<tbody>
     		<tr>
     			<td>
-    				Apples
-    			</td>
-    			<td>
     				<div id="applePrice" class="price"></div>
     			</td>
     			<td class="col-sm-1">
-    				<button type="button" class="fruitButton" id="buyApple" name="button">Buy!</button>
+    				<button type="button" class="fruitButton" id="buyApple" name="button"><input type="image" class = "piccy" src="http://www.gedeone-e-coop.it/images/apples.gif" /></button>
     			</td>
     			<td>
     				<div id="totalPriceApple"></div>
@@ -58,13 +56,10 @@
     		</tr>
     		<tr>
     			<td>
-    				Oranges
-    			</td>
-    			<td>
     				<div id="orangePrice" class="price"></div>
     			</td>
     			<td class="col-sm-1">
-    				<button type="button" class="fruitButton" id="buyOrange" name="button">Buy!</button>
+    				<button type="button" class="fruitButton" id="buyOrange" name="button"><input type="image" class = "piccy" src="http://images.all-free-download.com/images/graphicthumb/orange_highdefinition_picture_167218.jpg"></button>
     			</td>
     			<td>
     				<div id="totalPriceOrange"></div>
@@ -72,13 +67,10 @@
     		</tr>
     		<tr>
     			<td>
-    				Bananas
-    			</td>
-    			<td>
     				<div id="bananaPrice" class="price"></div>
     			</td>
     			<td class="col-sm-1">
-    				<button type="button" class="fruitButton" id="buyBanana" name="button">Buy!</button>
+    				<button type="button" class="fruitButton" id="buyBanana" name="button"><input type="image" class = "piccy" src="https://s-media-cache-ak0.pinimg.com/originals/94/01/d8/9401d818a98e270dca658daec3ef246a.png" ></button>
     			</td>
     			<td>
     				<div id="totalPriceBanana"></div>
@@ -86,13 +78,10 @@
     		</tr>
     		<tr>
     			<td>
-    				Grapes
-    			</td>
-    			<td>
     				<div id="grapePrice" class="price"></div>
     			</td>
     			<td class="col-sm-1">
-    				<button type="button" class="fruitButton" id="buyGrape" name="button">Buy!</button>
+    				<button type="button" class="fruitButton" id="buyGrape" name="button"><input class = "piccy" type="image" src="http://images.all-free-download.com/images/graphicthumb/table_grapes_grapes_fruit_214430.jpg"></button>
     			</td>
     			<td>
     				<div id="totalPriceGrape"></div>
